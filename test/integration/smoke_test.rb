@@ -6,6 +6,14 @@ require 'geocoder'
 
 class SmokeTest < Test::Unit::TestCase
 
+  def test_address_search_with_region
+    Geocoder::Configuration.region = :br
+    result = Geocoder.search "Toledo"
+    assert_equal "Brazil", result.first.country
+  ensure
+    Geocoder::Configuration.region = :us
+  end
+
   def test_simple_zip_code_search
     result = Geocoder.search "27701"
     assert_equal "Durham", result.first.city

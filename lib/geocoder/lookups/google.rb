@@ -32,7 +32,8 @@ module Geocoder::Lookup
         (reverse ? :latlng : :address) => query,
         :sensor => "false",
         :language => Geocoder::Configuration.language,
-        :key => Geocoder::Configuration.api_key
+        :key => Geocoder::Configuration.api_key,
+        :region => Geocoder::Configuration.region
       }
       "#{protocol}://maps.googleapis.com/maps/api/geocode/json?" + hash_to_query(params)
     end
