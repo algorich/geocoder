@@ -39,4 +39,3 @@ module Geocoder::Lookup
     end
   end
 end
-

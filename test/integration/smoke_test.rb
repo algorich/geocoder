@@ -11,7 +11,7 @@ class SmokeTest < Test::Unit::TestCase
     result = Geocoder.search "Toledo"
     assert_equal "Brazil", result.first.country
   ensure
-    Geocoder::Configuration.region = :us
+    Geocoder::Configuration.region = nil
   end
 
   def test_simple_zip_code_search
